@@ -33,7 +33,6 @@ public class CityscapeComponent extends JComponent
         
         cityScape.drawBackground(g2);
         cityScape.drawBuildings(g2);
-        
         cityScape.drawSmallStars(g2);
         cityScape.drawBigStars(g2);
         cityScape.drawMoon(g2);

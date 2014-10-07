@@ -1,18 +1,16 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
-import java.util.Random;
 
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
  * 
- * @author @Davis Zhang
- * @7 October 2014
+ * @author @gcschmit
+ * @version 18 July 2014
  */
-public class CityscapeComponent extends JComponent
+public class ComponentTest extends JComponent
 {
- 
     /**
      * An example of a method - replace this comment with your own
      *    that describes the operation of the method
@@ -28,16 +26,9 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        CityScape cityScape = new CityScape(800, 600);
+        CityTest cityScape = new CityTest(800);
         
-        
-        cityScape.drawBackground(g2);
-        cityScape.drawBuildings(g2);
-        
-        cityScape.drawSmallStars(g2);
-        cityScape.drawBigStars(g2);
-        cityScape.drawMoon(g2);
-
+        cityScape.draw(g2);
     }
-}   
-   
+
+}

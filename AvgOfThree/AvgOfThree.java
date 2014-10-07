@@ -4,7 +4,7 @@ public class AvgOfThree
 {
    public static void main (String[] args)
    {
-       Scanner s = new Scanner(System.in);
+       /*Scanner s = new Scanner(System.in);
        double a, b, c;
 
       System.out.print ("Enter the first number: ");
@@ -21,5 +21,8 @@ public class AvgOfThree
       double avg = (a + b + c) / 3;
       
       System.out.println ("average " + avg);
+      */
+     double f = 4.35;
+     System.out.println(100 * f);
    }
 }

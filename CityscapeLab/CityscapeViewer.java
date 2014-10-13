@@ -12,7 +12,7 @@ public class CityscapeViewer
      * main method for the program which creates and configures the frame for the program
      *
      */
-    public static void main(String[] args) throws InterruptedException
+    public static void main(String[] args)
     {
         // create and configure the frame (window) for the program
         JFrame frame = new JFrame();

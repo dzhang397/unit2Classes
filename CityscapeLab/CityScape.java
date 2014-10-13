@@ -64,11 +64,6 @@ public class CityScape
         
             g2.setColor(Color.WHITE);
             g2.fill(new Ellipse2D.Double(starX, starY, starRadius, starRadius));
-            try{
-                Thread.currentThread().sleep(1000);
-            }
-                catch(InterruptedException ie){
-            }
         }
     }
     

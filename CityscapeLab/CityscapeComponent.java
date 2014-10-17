@@ -28,15 +28,17 @@ public class CityscapeComponent extends JComponent
     {
         Graphics2D g2 = (Graphics2D) g;
         
-        CityScape cityScape = new CityScape(800, 600);
+        Background background = new Background();
+        Buildings buildings = new Buildings();
+        SmallStars stars = new SmallStars();
+        BigStars bigStars = new BigStars();
+        Moon moon = new Moon();
         
-        
-        cityScape.drawBackground(g2);
-        cityScape.drawBuildings(g2);
-        
-        cityScape.drawSmallStars(g2);
-        cityScape.drawBigStars(g2);
-        cityScape.drawMoon(g2);
+        background.drawBackground(g2);
+        buildings.drawBuildings(g2);
+        stars.drawSmallStars(g2);
+        bigStars.drawBigStars(g2);
+        moon.drawMoon(g2);
 
     }
 }   

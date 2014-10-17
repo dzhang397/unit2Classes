@@ -4,48 +4,69 @@ import java.awt.geom.Ellipse2D;
 import java.awt.Color;
 import java.util.Random;
 
-public class CityTest
+/**
+ * Class that defines the classes which draw the buildings
+ * 
+ * @author @Davis Zhang
+ * @7 October 2014
+ */
+public class Buildings
 {
-    private int frameWidth = 800;
-    private int frameHeight = 600;
-    static int totalWidth = 0;
-    static int xPos = 0;
-    static int yPos;
-    private int citySize;
-    
-    public CityTest(int size)
+    /**
+    * Constructor for the Buildings class
+    */
+    public Buildings()
     {
-        citySize = size;
     }
     
-    public void draw (Graphics2D g2)
+    /**
+    * Draws the buildings with random height, width, color, and window states.
+    * @param Graphics2D
+    * @returns void
+    */
+    public void drawBuildings (Graphics2D g2)
     {
-        int buildingWidth, buildingHeight;
+        int totalWidth = 0;
+        int xPos = 0;
+        int buildingHeight, buildingWidth;
+        int yPos;
         int windowSize = 10;
         int windowSill = 3;
         int windowX = 0;
         int windowY = 0;
         int windowTotal = 0;
         int rowTwoX;
-
-        Random rand = new Random();
+        int frameWidth = 800;
+        int frameHeight = 600;
+        
+        Random randgen = new Random();
         
         while(frameWidth - totalWidth > 200){
             
             yPos = 520;
+           
+            int rd = randgen.nextInt(55);
+            int grn = randgen.nextInt(55);
+            int bl = randgen.nextInt(55);
             
-            int r = rand.nextInt(55);
-            int g = rand.nextInt(55);
-            int b = rand.nextInt(55);
-        
-            Color buildingColor = new Color(r + 20, g + 20, b + 20);
+            Color buildingColor = new Color(rd + 15, grn + 15, bl + 15);
             
-            buildingWidth = rand.nextInt(10) + 50;
-            buildingHeight = rand.nextInt(20) * 5 + 100;
+            buildingWidth = randgen.nextInt(10) + 50;
+            buildingHeight = randgen.nextInt(20) * 5 + 100;
             totalWidth = buildingWidth + totalWidth;
             
             yPos = yPos - buildingHeight;
-            /*g2.setColor(buildingColor);*/
+            
+            /* for(int i = 0;i < (int) buildingHeight / 4; i++){
+                
+                Color buildingColor = new Color(r - buildingHeight + i, g - buildingHeight + i, b - buildingHeight + i);
+                g2.setColor(buildingColor);
+                
+                g2.draw3DRect(xPos, yPos - buildingHeight + 4 * i, buildingWidth, 4, false);
+                g2.fill3DRect(xPos, yPos - buildingHeight + 4 * i, buildingWidth, 4, false);
+            }*/
+            
+            g2.setColor(buildingColor);
             g2.draw3DRect(xPos, yPos, buildingWidth, buildingHeight, true);
             g2.fill3DRect(xPos, yPos, buildingWidth, buildingHeight, true);
             
@@ -56,14 +77,14 @@ public class CityTest
             
             while(yPos + buildingHeight - windowY > 30){
                 
-                /*int windowOn = rand.nextInt(2);
+                int windowOn = randgen.nextInt(2);
                 
                 if(windowOn == 0){
                     g2.setColor(Color.YELLOW);
                 }
                 else{
                     g2.setColor(Color.BLACK);
-                }*/
+                }
                 
                 g2.draw3DRect(windowX, windowY, windowSize, windowSize, true);
                 g2.fill3DRect(windowX, windowY, windowSize, windowSize, true);
@@ -78,14 +99,14 @@ public class CityTest
                 
                 rowTwoX = totalWidth - windowSize - windowGap;
                 
-                /*windowOn = rand.nextInt(2);
+                windowOn = randgen.nextInt(2);
                 
                 if(windowOn == 0){
                     g2.setColor(Color.YELLOW);
                 }
                 else{
                     g2.setColor(Color.BLACK);
-                }*/
+                }
                 
                 g2.draw3DRect(rowTwoX, windowY, windowSize, windowSize, true);
                 g2.fill3DRect(rowTwoX, windowY, windowSize, windowSize, true);
